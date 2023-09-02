@@ -13,6 +13,7 @@ public:
 	void SetPlayerName(const char* new_client_name);
 	int GetPort();
 	std::string GetAddress();
+	std::string GetWAdress();
 	const char* GetPlayerName();
 };
 
