@@ -37,73 +37,11 @@ public:
 };
 
 
-#include <EventCore.h>
-#include <pplx/pplxtasks.h>
 
-class Resource_Class
-{
-private:
-	char pad_0001[96];
-	char pad_0000[0x60]; //0x0000
-public:
-	std::string m_name;
-	std::string m_rootPath;
-	std::string name;
-	std::string resource;
-
-	inline bool LoadFrom(const std::string& rootPath)
-	{
-		return LoadFrom(rootPath, nullptr);
-	}
-
-	virtual bool LoadFrom(const std::string& rootPath, std::string* errorResult) = 0;
-
-	virtual bool Start() = 0;
-
-	virtual bool Stop() = 0;
-
-	virtual void Run(std::function<void()>&& func) = 0;
-
-	//virtual Resource_Manager_Class* GetManager() = 0;
-
-};
-
-class Resource_Manager_Class : public fwRefCountable
-{
-private:
-
-public:
-	virtual pplx::task<fwRefContainer<Resource_Class>> AddResource(const std::string& uri) = 0;
-
-	virtual fwRefContainer<Resource_Class> GetResource(const std::string& identifier, bool withProvides = true) = 0;
-
-	virtual void ForAllResources(const std::function<void(const fwRefContainer<Resource_Class>&)>& function) = 0;
-
-	virtual void ResetResources() = 0;
-
-
-	virtual void RemoveResource(fwRefContainer<Resource_Class> resource) = 0;
-
-	virtual fwRefContainer<Resource_Class> CreateResource(const std::string& resourceName, int fak) = 0;
-
-	virtual void Tick() = 0;
-
-	virtual void MakeCurrent() = 0;
-
-};
-
-class citizen_resources_core
-{
-private:
-	typedef void(__fastcall* rCreateResourceManager)(Resource_Manager_Class*);
-public:
-	Resource_Manager_Class* CreateResourceManager();
-};
-
-
-
-class m_cidia : public net
+class m_cidia
 {
 public:
-
+	net* Net();
+	CitizenGame* cCitizenGame();
+	scripthookv* Cscripthookv();
 };
