@@ -1,6 +1,7 @@
 # FiveM-Modules-hook / FiveM cheating / FiveM hooking
-discord: https://discord.gg/c28q96pnn
 som tools to get server ip and port and (SetPlayerName) and so on
+
+discord: https://discord.gg/c28q96pnn
 
 but if you wanner use citizen_resources_core please includes there files you can find them in old FiveM SDK executors and create hooks for there functions Like stop resource 0x17000(__int64 a1) = (const char* name)
 just create the function you want to work :)
