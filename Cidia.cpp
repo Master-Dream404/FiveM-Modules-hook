@@ -32,6 +32,11 @@ std::string net::GetAddress() {
 	nGetAddress GetAddress = reinterpret_cast<nGetAddress>(GetProcAddress(Modules::net::module, "?GetAddress@NetAddress@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ"));
 	return GetAddress();
 }
+std::string net::GetWAdress()
+{
+	nGetAddress GetWAddress = reinterpret_cast<nGetAddress>(GetProcAddress(Modules::net::module, "?GetWAddress@NetAddress@@QEAA?AV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@XZ"));
+	return GetWAddress();
+}
 const char* net::GetPlayerName() {
 	nGetPlayerName GetPlayerName = reinterpret_cast<nGetPlayerName>(GetProcAddress(Modules::net::module, "?GetPlayerName@NetLibrary@@UEAAPEBDXZ"));
 	return GetPlayerName();
