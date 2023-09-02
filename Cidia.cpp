@@ -84,4 +84,22 @@ void thx_master_dream()
 	new_manager->GetResource("test")->Start();
 }
 
+net* m_cidia::Net()
+{
+	auto m_net = new net();
+	return m_net;
+}
+
+CitizenGame* m_cidia::cCitizenGame()
+{
+	auto m_CitizenGame = new CitizenGame();
+	return m_CitizenGame;
+}
+
+scripthookv* m_cidia::Cscripthookv()
+{
+	auto m_scripthookv = new scripthookv();
+	return m_scripthookv;
+}
+
 
